@@ -31,4 +31,15 @@ export class Noketa {
       return this.post<any>("/contacts/create", payload);
     },
   };
+
+  public emails = {
+    send: async (payload: {
+      from: string;
+      to: string;
+      subject: string;
+      html: string;
+    }) => {
+      return this.post<any>("/emails/send", payload);
+    },
+  };
 }

@@ -21,6 +21,11 @@ class Noketa {
                 return this.post("/contacts/create", payload);
             }),
         };
+        this.emails = {
+            send: (payload) => __awaiter(this, void 0, void 0, function* () {
+                return this.post("/emails/send", payload);
+            }),
+        };
         if (!apiKey) {
             throw new Error("API key is required");
         }

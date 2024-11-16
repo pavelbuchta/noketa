@@ -9,4 +9,12 @@ export declare class Noketa {
             email: string;
         }) => Promise<any>;
     };
+    emails: {
+        send: (payload: {
+            from: string;
+            to: string;
+            subject: string;
+            html: string;
+        }) => Promise<any>;
+    };
 }
