@@ -17,8 +17,7 @@ const axios_1 = __importDefault(require("axios"));
 class Noketa {
     constructor(apiKey) {
         this.contacts = {
-            create: (audienceId, name, email) => __awaiter(this, void 0, void 0, function* () {
-                const payload = { audienceId, name, email };
+            create: (payload) => __awaiter(this, void 0, void 0, function* () {
                 return this.post("/contacts/create", payload);
             }),
         };

@@ -23,8 +23,11 @@ export class Noketa {
   }
 
   public contacts = {
-    create: async (audienceId: string, name: string, email: string) => {
-      const payload = { audienceId, name, email };
+    create: async (payload: {
+      audienceId: string;
+      name: string;
+      email: string;
+    }) => {
       return this.post<any>("/contacts/create", payload);
     },
   };

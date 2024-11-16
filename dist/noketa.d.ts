@@ -3,6 +3,10 @@ export declare class Noketa {
     constructor(apiKey: string);
     private post;
     contacts: {
-        create: (audienceId: string, name: string, email: string) => Promise<any>;
+        create: (payload: {
+            audienceId: string;
+            name: string;
+            email: string;
+        }) => Promise<any>;
     };
 }
