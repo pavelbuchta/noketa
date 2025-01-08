@@ -1,5 +1,17 @@
 import axios from "axios";
 
+type ProfileAttributes = {
+  first_name: string | undefined;
+  last_name: string | undefined;
+  locale: string | undefined;
+  gender: string | undefined;
+  age: number | undefined;
+  birthdate: Date | undefined;
+  external_id: string | undefined;
+  last_event_date: Date | undefined;
+  properties: Object | undefined;
+};
+
 export class Noketa {
   private apiKey: string;
 
@@ -22,13 +34,13 @@ export class Noketa {
     }
   }
 
-  public contacts = {
+  public profiles = {
     create: async (payload: {
-      audienceId: string;
-      name: string;
+      listId: string;
+      attributes: ProfileAttributes;
       email: string;
     }) => {
-      return this.post<any>("/contacts/create", payload);
+      return this.post<any>("/profiles", payload);
     },
   };
 
